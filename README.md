@@ -1,3 +1,3 @@
 # Test Leroy Merlin
 
-Desenvolvimento de uma aplicaçaõ like reddit
+Desenvolvimento de uma aplicação de listagem de usuários.

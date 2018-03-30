@@ -1,11 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class FormInput extends Component {
-  render () {
-    return (
-      <input className='form-control' type={this.props.type} name={this.props.name} placeholder={this.props.placeholder} value={this.props.value} id={this.props.id} />
-    )
-  }
+export default props => {
+  return (
+    <input className='form-control' type={props.type} name={props.name} placeholder={props.placeholder} value={props.value} id={props.id} />
+  )
 }
-
-export default FormInput

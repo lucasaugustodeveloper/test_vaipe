@@ -9,18 +9,13 @@ class Users extends Component {
   constructor () {
     super()
     this.state = {
-      id: 1,
-      active: true,
-      fistName: '',
-      lastName: '',
-      rating: '',
+      firstName: '',
       user: []
     }
 
     this.handleGetUsers = this.handleGetUsers.bind(this)
     this.handleUserSubmit = this.handleUserSubmit.bind(this)
-    this.handleChangeFirstName = this.handleChangeFirstName.bind(this)
-    this.handleChangeLastName = this.handleChangeLastName.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleGetUsers()
   }
 
@@ -31,18 +26,11 @@ class Users extends Component {
 
   handleUserSubmit (e) {
     e.preventDefault()
-    const firstName = e.target[0].value
-    const lastName = ''
-    const id = ''
-    const active = ''
-    const rating = ''
-    console.log(e.target)
+    this.setState.user.push({name: {first: this.state.firstName}})
   }
-  handleChangeFirstName (e) {
-    this.setState({...this.state, firstName: e.target.value})
-  }
-  handleChangeLastName (e) {
-    this.setState({ ...this.state, lastName: e.target.value })
+
+  handleChange (e) {
+    this.setState.user.push({ name: { first: this.state.firstName } })
   }
 
   render () {
@@ -51,17 +39,13 @@ class Users extends Component {
         <Header title='Listagem de Usuários' />
         <div className='col-lg-12'>
           <UserForm
-            handleChangeFirstName={this.handleChangeFirstName}
-            handleChangeLastName={this.handleChangeLastName}
-            handleUserSubmit={this.handleUserSubmit}
             firstName={this.state.firstName}
-            lastName={this.state.lastName}
-            id={this.state.id}
-            active={this.state.active}
+            handleChange={this.handleChange}
+            handleUserSubmit={this.handleUserSubmit}
           />
         </div>
         <div className='col-lg-12'>
-          <UserList list={this.state.user}/>
+          <UserList list={this.state.user} />
         </div>
       </div>
     )
